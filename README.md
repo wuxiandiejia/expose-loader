@@ -43,10 +43,22 @@ Alternately, you can set this in your config file:
 
 webpack v1 usage
 ```
+// webpack 1.x usage
 module: {
   loaders: [
     { test: require.resolve("react"), loader: "expose-loader?React" }
   ]
+}
+
+// webpack 2.x usage
+module: {
+  rules: [{
+          test: require.resolve('react'),
+          use: [{
+              loader: 'expose-loader',
+              options: 'React'
+          }]
+      }]
 }
 ```
 webpack v2 usage
@@ -65,10 +77,25 @@ Also for multiple expose you can use `!` in loader string:
 
 webpack v1 usage
 ```
+// webpack 1.x usage
 module: {
   loaders: [
     { test: require.resolve("jquery"), loader: "expose-loader?$!expose-loader?jQuery" },
   ]
+}
+
+// webpack 2.x usage
+module: {
+  rules: [{
+          test: require.resolve('react'),
+          use: [{
+              loader: 'expose-loader',
+              options: 'React'
+          },{
+              loader: 'expose-loader',
+              options: 'react'
+          }]
+      }]
 }
 ```
 webpack v2 usage
