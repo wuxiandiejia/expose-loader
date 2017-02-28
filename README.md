@@ -46,17 +46,17 @@ webpack v1 usage
 // webpack 1.x usage
 module: {
   loaders: [
-    { test: require.resolve("react"), loader: "expose-loader?React" }
+    { test: require.resolve("jquery"), loader: "expose-loader?jQuery" }
   ]
 }
 
 // webpack 2.x usage
 module: {
   rules: [{
-          test: require.resolve('react'),
+          test: require.resolve('jquery'),
           use: [{
               loader: 'expose-loader',
-              options: 'React'
+              options: 'jQuery'
           }]
       }]
 }
@@ -87,13 +87,13 @@ module: {
 // webpack 2.x usage
 module: {
   rules: [{
-          test: require.resolve('react'),
+          test: require.resolve('jquery'),
           use: [{
               loader: 'expose-loader',
-              options: 'React'
+              options: 'jQuery'
           },{
               loader: 'expose-loader',
-              options: 'react'
+              options: '$'
           }]
       }]
 }
