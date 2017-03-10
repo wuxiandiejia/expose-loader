@@ -49,18 +49,6 @@ module: {
   ]
 }
 ```
-webpack v2 usage:
-```
-module: {
-  rules: [{
-          test: require.resolve('react'),
-          use: [{
-              loader: 'expose-loader',
-              options: 'React'
-          }]
-      }]
-}
-```
 webpack v2 usage
 ```
 module: {
@@ -81,21 +69,6 @@ module: {
   loaders: [
     { test: require.resolve("jquery"), loader: "expose-loader?$!expose-loader?jQuery" },
   ]
-}
-```
-webpack v2 usage:
-```
-module: {
-  rules: [{
-          test: require.resolve('jquery'),
-          use: [{
-              loader: 'expose-loader',
-              options: 'jQuery'
-          },{
-              loader: 'expose-loader',
-              options: '$'
-          }]
-      }]
 }
 ```
 webpack v2 usage
