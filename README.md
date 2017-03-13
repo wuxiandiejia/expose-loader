@@ -43,14 +43,14 @@ Alternately, you can set this in your config file:
 
 webpack v1 usage
 ```
-// webpack 1.x usage
 module: {
   loaders: [
     { test: require.resolve("react"), loader: "expose-loader?React" }
   ]
 }
-
-// webpack 2.x usage
+```
+webpack v2 usage:
+```
 module: {
   rules: [{
           test: require.resolve('react'),
@@ -77,14 +77,14 @@ Also for multiple expose you can use `!` in loader string:
 
 webpack v1 usage
 ```
-// webpack 1.x usage
 module: {
   loaders: [
     { test: require.resolve("jquery"), loader: "expose-loader?$!expose-loader?jQuery" },
   ]
 }
-
-// webpack 2.x usage
+```
+webpack v2 usage:
+```
 module: {
   rules: [{
           test: require.resolve('jquery'),
